@@ -37,7 +37,9 @@ export default function Dashboard() {
         <h2>Hey, <strong>{user.fullName}</strong>! You’re successfully logged in</h2>
         <button onClick={async () => {
             await auth.signOut();
-            router.push('/login');
+            localStorage.clear();
+            sessionStorage.clear();
+            router.replace('/login');
         }}>Logout</button>
         </div>
     );
